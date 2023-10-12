@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { HeroTableComponent } from '../hero-table/hero-table.component'
 
 @Component({
   selector: 'app-heroes',
@@ -10,6 +11,9 @@ import { HeroService } from '../hero.service';
 })
 export class HeroesComponent implements OnInit {
   heroes: Hero[] = [];
+  refreshed: Hero[] = [];
+  @ViewChild('heroTable')
+  heroTable!: HeroTableComponent;
 
   constructor(private heroService: HeroService) { }
 
@@ -22,18 +26,13 @@ export class HeroesComponent implements OnInit {
     .subscribe(heroes => this.heroes = heroes);
   }
 
-  add(name: string): void {
+  add(name: string, age: number, symbol: string = '💀'): void {
     name = name.trim();
     if (!name) { return; }
-    this.heroService.addHero({ name } as Hero)
+    this.heroService.addHero({ name, age, symbol } as Hero)
       .subscribe(hero => {
         this.heroes.push(hero);
-      });
+        this.heroTable.refresh();
+        });
   }
-
-  delete(hero: Hero): void {
-    this.heroes = this.heroes.filter(h => h !== hero);
-    this.heroService.deleteHero(hero.id).subscribe();
-  }
-
 }

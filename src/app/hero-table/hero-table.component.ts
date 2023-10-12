@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MatTableModule } from '@angular/material/table';
+import { MatTableModule, MatTableDataSource } from '@angular/material/table';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 
@@ -14,19 +14,25 @@ import { HeroService } from '../hero.service';
   imports: [MatTableModule]
 })
 export class HeroTableComponent implements OnInit{
-  displayedColumns: string[] = ['id', 'name', 'age', 'symbol'];
+  displayedColumns: string[] = ['id', 'name', 'age', 'symbol', 'actions'];
   heroes: Hero[] = [];
-  dataSource = this.heroes;
+  dataSource : MatTableDataSource<Hero>;
 
-  constructor(private heroService: HeroService) { }
-
-  ngOnInit(): void {
-    this.getHeroes()
+  constructor(private heroService: HeroService) {
+    this.dataSource = new MatTableDataSource(this.heroes);
   }
 
-  getHeroes(): void {
-    this.heroService.getHeroes()
-    .subscribe(heroes => {this.heroes = heroes;
-                          this.dataSource = heroes});
+  ngOnInit(): void {
+    this.refresh()
+  }
+
+  refresh() {
+    this.heroService.getHeroes().subscribe(heroes => {
+      this.dataSource.data = heroes;
+    })
+  }
+
+  delete(hero: Hero) {
+    this.heroService.deleteHero(hero.id).subscribe(_ => this.refresh());
   }
 }

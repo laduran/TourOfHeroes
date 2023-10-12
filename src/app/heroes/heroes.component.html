@@ -4,18 +4,15 @@
   <label for="new-hero">Hero name: </label>
   <input id="new-hero" #heroName />
 
-  <!-- (click) passes input value to add() and then clears the input -->
-  <button type="button" class="add-button" (click)="add(heroName.value); heroName.value=''">
+  <!-- TODO: Add input validation here so that user can only type in 1 - 200 -->
+  <label for="new-hero">Hero age: </label>
+  <input id="new-hero" #heroAge />
+
+  <!-- (click) passes input value to add() and then clears the input 
+       + converts heroAge.value from string to number
+  -->
+  <button type="button" class="add-button" (click)="add(heroName.value, +heroAge.value); heroName.value=''">
     Add hero
   </button>
 </div>
-<app-hero-table></app-hero-table>
-<ul class="heroes">
-  <li *ngFor="let hero of heroes">
-    <a routerLink="/detail/{{hero.id}}">
-      <span class="badge">{{hero.id}}</span> {{hero.name}} {{hero.age}}
-    </a>
-    <button type="button" class="delete" title="delete hero"
-      (click)="delete(hero)">x</button>
-  </li>
-</ul>
+<app-hero-table #heroTable></app-hero-table>

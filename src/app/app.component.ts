@@ -10,12 +10,12 @@ export class AppComponent{
   title = 'Tour of Heroes';
 
   onActivate(event: any) {
-    console.log("onActivate")
-    console.log(event)
+    // console.log("onActivate")
+    // console.log(event)
   }
 
   onDeactivate(event: any) {
-    console.log("onDeactivate")
-    console.log(event)
+    // console.log("onDeactivate")
+    // console.log(event)
   }
 }
