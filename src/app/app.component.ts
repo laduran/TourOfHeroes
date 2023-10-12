@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HeroTableComponent } from './hero-table/hero-table.component';
 
 @Component({
   selector: 'app-root',

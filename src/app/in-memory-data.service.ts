@@ -8,24 +8,14 @@ import { Hero } from './hero';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const heroes = [
-      { id: 12, name: 'Dr. Nice', age: 26 },
-      { id: 13, name: 'Bombasto', age: 46 },
-      { id: 14, name: 'Celeritas', age: 51 },
-      { id: 15, name: 'Magneta', age: 40 },
-      { id: 16, name: 'RubberMan', age: 36 },
-      { id: 17, name: 'Dynama', age: 35 },
-      { id: 18, name: 'Dr. IQ', age: 55 },
-      { id: 19, name: 'Magma', age: 34 },
-      { id: 20, name: 'Tornado', age: 29 },
-      { id: 21, name: 'Thor', age: 31 },
-      { id: 22, name: 'Spider Man', age: 22 },
-      { id: 23, name: 'Wolverine', age: 35 },
-      { id: 24, name: 'Green Lantern', age: 34 },
-      { id: 25, name: 'Batman', age: 44 },
-      { id: 26, name: 'Wonder Woman', age: 29 },
-      { id: 27, name: 'Plastic Man', age: 31 },
-      { id: 28, name: 'Hulk', age: 43 },
-      { id: 29, name: 'Black Panther', age: 37 },
+      { id: 12, name: 'Dr. Nice', age: 26, symbol: '🦫' },
+      { id: 13, name: 'Bombasto', age: 46, symbol: '💣' },
+      { id: 14, name: 'Celeritas', age: 51, symbol: '🎅' },
+      { id: 15, name: 'Magneta', age: 40, symbol: '🤶' },
+      { id: 16, name: 'RubberMan', age: 36, symbol: '🥸' },
+      { id: 17, name: 'Dynama', age: 35, symbol: '💀' },
+      { id: 18, name: 'Dr. IQ', age: 55, symbol: '🤓' },
+      { id: 19, name: 'Magma', age: 34, symbol: '🧙‍♂️' },
     ];
     return {heroes};
   }
