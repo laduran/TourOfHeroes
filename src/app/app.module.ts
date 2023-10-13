@@ -16,6 +16,12 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { MessagesComponent } from './messages/messages.component';
 import { HeroTableComponent } from './hero-table/hero-table.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
+import {MatSelectModule} from '@angular/material/select';
+import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 @NgModule({
   imports: [
@@ -24,6 +30,11 @@ import { HeroTableComponent } from './hero-table/hero-table.component';
     AppRoutingModule,
     HttpClientModule,
     HeroTableComponent,
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatSelectModule,
+    MatFormFieldModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.

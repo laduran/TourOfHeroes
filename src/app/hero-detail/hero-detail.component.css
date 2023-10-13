@@ -3,6 +3,10 @@ label {
   color: #435960;
   font-weight: bold;
 }
+span {
+  font-size: large;
+  font-weight: bolder;
+}
 input {
   font-size: 1em;
   padding: .5rem;

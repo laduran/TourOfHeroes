@@ -8,10 +8,20 @@
   <label for="new-hero">Hero age: </label>
   <input id="new-hero" #heroAge />
 
+  <mat-form-field>
+    <mat-label>Select an option</mat-label>
+    <mat-select [(value)]="selected">
+      <mat-option>None</mat-option>
+      <mat-option value="💀">💀 Skull</mat-option>
+      <mat-option value="🧙‍♂️">🧙‍♂️ Wizard</mat-option>
+      <mat-option value="🥸">🥸 Angry</mat-option>
+    </mat-select>
+  </mat-form-field>
+
   <!-- (click) passes input value to add() and then clears the input 
        + converts heroAge.value from string to number
   -->
-  <button type="button" class="add-button" (click)="add(heroName.value, +heroAge.value); heroName.value=''">
+  <button type="button" class="add-button" (click)="add(heroName.value, +heroAge.value, selected); heroName.value=''">
     Add hero
   </button>
 </div>
