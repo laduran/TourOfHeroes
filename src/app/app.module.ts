@@ -2,10 +2,11 @@ import { NgModule, importProvidersFrom } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {VERSION as MAT_VERSION, MatNativeDateModule} from '@angular/material/core';
+import { MaterialModule } from './material.module';
 import {provideAnimations} from '@angular/platform-browser/animations';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { AppRoutingModule } from './app-routing.module';
 
@@ -16,12 +17,6 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { MessagesComponent } from './messages/messages.component';
 import { HeroTableComponent } from './hero-table/hero-table.component';
-import {MatIconModule} from '@angular/material/icon';
-import {MatMenuModule} from '@angular/material/menu';
-import {MatButtonModule} from '@angular/material/button';
-import {MatSelectModule} from '@angular/material/select';
-import {MatFormFieldModule} from '@angular/material/form-field';
-
 
 @NgModule({
   imports: [
@@ -29,12 +24,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     FormsModule,
     AppRoutingModule,
     HttpClientModule,
+    MaterialModule,
     HeroTableComponent,
-    MatIconModule,
-    MatMenuModule,
-    MatButtonModule,
-    MatSelectModule,
-    MatFormFieldModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
