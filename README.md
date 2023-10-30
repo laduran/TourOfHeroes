@@ -17,7 +17,7 @@ Some changes from default Tour of Heroes:
 
 **RXjs**
 
-Common RXjs operators (KNOW THESE!) (from here [I only ever use *these* RxJS operators to code reactively - YouTube](https://www.youtube.com/watch?v=Byttv3YpjQk)):
+Common RXjs operators (KNOW THESE!) [from here](https://www.youtube.com/watch?v=Byttv3YpjQk)):
 
 `Map and Filter`
 
