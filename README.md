@@ -33,3 +33,4 @@ Common RXjs operators (KNOW THESE!) [from here](https://www.youtube.com/watch?v=
 
 TODO: Look into how to use RXjs streams when getting items from the HeroService.
 
+[Good Fireship.io Tutorial on RxJS](https://github.com/fireship-io/175-code-this-not-that-rxjs)
